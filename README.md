@@ -77,6 +77,21 @@ In this part, we:
   - Kept validation for the status (`Present` / `Absent`), marking anything else as `Invalid` with a warning.
 - Kept file saving (from Part 6) for students, courses, and attendance.
 
+## Part 8 – AttendanceService with Overloaded Methods
+
+In this part, we:
+
+- Introduced an `AttendanceService` class to manage attendance in a central place.
+- Implemented overloaded methods:
+  - `markAttendance(int studentId, int courseId, String status)`
+  - `markAttendance(Student student, Course course, String status)`
+  - `getAttendanceForStudent(int studentId)`
+  - `getAttendanceForStudent(Student student)`
+- Updated `Main` to:
+  - Use both overloads of `markAttendance` to record attendance.
+  - Demonstrate both overloads of `getAttendanceForStudent` and print results.
+- Continued saving attendance records to `Attendance_log.txt` using `FileStorageService`.
+
 ## Folder Structure
 
 Attendance/
@@ -91,7 +106,8 @@ Attendance/
 │ ├─ Course.java
 │ ├─ AttendanceRecord.java
 │ ├─ Storable.java
-│ └─ FileStorageService.java
+│ ├─ FileStorageService.java
+│ └─ AttendanceService.java
 ├─ students.txt
 ├─ courses.txt
 ├─ Attendance_log.txt
