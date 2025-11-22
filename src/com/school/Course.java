@@ -5,25 +5,26 @@ public class Course {
     // Auto–ID counter for all courses
     private static int nextCourseIdCounter = 101;
 
-    private int code;     // now int instead of String
-    private String name;
+    private int courseId;
+    private String courseName;
 
-    // New constructor (Part 03 requirement)
-    public Course(String name) {
-        this.code = nextCourseIdCounter++;
-        this.name = name;
+    // Auto-ID constructor
+    public Course(String courseName) {
+        this.courseId = nextCourseIdCounter++;
+        this.courseName = courseName;
     }
 
-    public String getName() {
-        return name;
+    // Getters (Part 4 requirement)
+    public int getCourseId() {
+        return courseId;
     }
 
-    public int getCode() {
-        return code;
+    public String getCourseName() {
+        return courseName;
     }
 
     @Override
     public String toString() {
-        return "Course{name='" + name + "', code='C" + code + "'}";
+        return "Course{name='" + courseName + "', courseId='C" + courseId + "'}";
     }
 }

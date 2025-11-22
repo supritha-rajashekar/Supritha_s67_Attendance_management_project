@@ -5,25 +5,26 @@ public class Student {
     // Auto–ID counter for all students
     private static int nextStudentIdCounter = 1;
 
-    private int rollNumber;   // now auto-generated
+    private int studentId;
     private String name;
 
-    // New constructor (Part 03 requirement)
+    // Auto-ID constructor
     public Student(String name) {
-        this.rollNumber = nextStudentIdCounter++;
+        this.studentId = nextStudentIdCounter++;
         this.name = name;
+    }
+
+    // Getters (Part 4 requirement)
+    public int getStudentId() {
+        return studentId;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getRollNumber() {
-        return rollNumber;
-    }
-
     @Override
     public String toString() {
-        return "Student{name='" + name + "', rollNumber=" + rollNumber + "}";
+        return "Student{name='" + name + "', studentId=" + studentId + "}";
     }
 }
