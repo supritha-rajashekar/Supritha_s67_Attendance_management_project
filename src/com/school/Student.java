@@ -1,12 +1,17 @@
 package com.school;
 
 public class Student {
-    private String name;
-    private int rollNumber;
 
-    public Student(String name, int rollNumber) {
+    // Auto–ID counter for all students
+    private static int nextStudentIdCounter = 1;
+
+    private int rollNumber;   // now auto-generated
+    private String name;
+
+    // New constructor (Part 03 requirement)
+    public Student(String name) {
+        this.rollNumber = nextStudentIdCounter++;
         this.name = name;
-        this.rollNumber = rollNumber;
     }
 
     public String getName() {
