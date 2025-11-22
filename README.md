@@ -47,6 +47,23 @@ In this part, we:
   - Storing them in a `Person[]` array and printing them using overridden `toString()` / `getDescription()`.
 - Continued to use `Student` and `Course` IDs in the attendance system.
 
+## Part 6 – Storable Interface and File Storage
+
+In this part, we:
+
+- Introduced a `Storable` interface with a `toStorageString()` method.
+- Implemented `Storable` in:
+  - `Student`
+  - `Course`
+  - `AttendanceRecord`
+- Created a `FileStorageService` class that:
+  - Accepts a list of `Storable` objects.
+  - Writes each object as a line in a text file.
+- Updated `Main` to:
+  - Save students to `students.txt`
+  - Save courses to `courses.txt`
+  - Save attendance records to `Attendance_log.txt`
+
 ## Folder Structure
 
 Attendance/
@@ -59,7 +76,12 @@ Attendance/
 │ ├─ Teacher.java
 │ ├─ Staff.java
 │ ├─ Course.java
-│ └─ AttendanceRecord.java
+│ ├─ AttendanceRecord.java
+│ ├─ Storable.java
+│ └─ FileStorageService.java
+├─ students.txt
+├─ courses.txt
+├─ Attendance_log.txt
 ├─ README.md
 
 ## How to Compile
