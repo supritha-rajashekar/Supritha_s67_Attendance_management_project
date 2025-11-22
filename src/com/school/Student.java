@@ -1,8 +1,7 @@
 package com.school;
 
-public class Student extends Person {
+public class Student extends Person implements Storable {
 
-    // Auto–ID counter for all students
     private static int nextStudentIdCounter = 1;
 
     private int studentId;
@@ -24,5 +23,11 @@ public class Student extends Person {
     @Override
     public String toString() {
         return getDescription();
+    }
+
+    @Override
+    public String toStorageString() {
+        // Format: studentId,name
+        return studentId + "," + getName();
     }
 }

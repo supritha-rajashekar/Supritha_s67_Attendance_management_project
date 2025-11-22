@@ -1,6 +1,6 @@
 package com.school;
 
-public class AttendanceRecord {
+public class AttendanceRecord implements Storable {
 
     private int studentId;
     private int courseId;
@@ -34,5 +34,11 @@ public class AttendanceRecord {
     public void displayRecord() {
         System.out.println("AttendanceRecord{studentId=" + studentId +
                 ", courseId=" + courseId + ", status='" + status + "'}");
+    }
+
+    @Override
+    public String toStorageString() {
+        // Format: studentId,courseId,status
+        return studentId + "," + courseId + "," + status;
     }
 }

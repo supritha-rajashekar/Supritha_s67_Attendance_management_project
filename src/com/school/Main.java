@@ -1,20 +1,21 @@
 package com.school;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Attendance System!");
 
-        // Create Students (auto-generated studentIds)
+        // Create Students
         Student[] students = new Student[4];
         students[0] = new Student("Alice");
         students[1] = new Student("Bob");
         students[2] = new Student("Charlie");
         students[3] = new Student("Diana");
 
-        // Create Courses (auto-generated courseIds)
+        // Create Courses
         Course[] courses = new Course[3];
         courses[0] = new Course("Mathematics");
         courses[1] = new Course("Science");
@@ -30,7 +31,7 @@ public class Main {
             System.out.println(course);
         }
 
-        // Inheritance demo: Teacher and Staff
+        // (From Part 5) – Teachers / Staff if you still want to keep them
         Teacher teacher1 = new Teacher("Evelyn", "Mathematics");
         Teacher teacher2 = new Teacher("Frank", "Science");
 
@@ -45,14 +46,13 @@ public class Main {
         System.out.println(staff1);
         System.out.println(staff2);
 
-        // Polymorphism demo: all are Persons
         Person[] people = new Person[] { students[0], students[1], teacher1, staff1 };
         System.out.println("\nPeople (Person references):");
         for (Person person : people) {
             System.out.println(person);
         }
 
-        // Part 4: Attendance Records still work with Student & Course IDs
+        // Attendance log
         List<AttendanceRecord> attendanceLog = new ArrayList<>();
 
         attendanceLog.add(new AttendanceRecord(
@@ -66,5 +66,17 @@ public class Main {
         for (AttendanceRecord record : attendanceLog) {
             record.displayRecord();
         }
+
+        // ===== Part 6: Save to files using FileStorageService =====
+        FileStorageService storageService = new FileStorageService();
+
+        List<Student> studentList = Arrays.asList(students);
+        List<Course> courseList = Arrays.asList(courses);
+
+        storageService.saveToFile("students.txt", studentList);
+        storageService.saveToFile("courses.txt", courseList);
+        storageService.saveToFile("Attendance_log.txt", attendanceLog);
+
+        System.out.println("\nData saved to files (students.txt, courses.txt, Attendance_log.txt).");
     }
 }
