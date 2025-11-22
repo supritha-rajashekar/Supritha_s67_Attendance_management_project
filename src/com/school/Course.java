@@ -1,24 +1,29 @@
 package com.school;
 
 public class Course {
-    private String name;
-    private String code;
 
-    public Course(String name, String code) {
+    // Auto–ID counter for all courses
+    private static int nextCourseIdCounter = 101;
+
+    private int code;     // now int instead of String
+    private String name;
+
+    // New constructor (Part 03 requirement)
+    public Course(String name) {
+        this.code = nextCourseIdCounter++;
         this.name = name;
-        this.code = code;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
     @Override
     public String toString() {
-        return "Course{name='" + name + "', code='" + code + "'}";
+        return "Course{name='" + name + "', code='C" + code + "'}";
     }
 }

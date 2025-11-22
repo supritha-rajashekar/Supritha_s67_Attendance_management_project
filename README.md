@@ -11,6 +11,16 @@ In this part, we:
 - Used arrays of `Student` and `Course` objects in `Main.java`.
 - Displayed the list of students and courses in the console.
 
+## Part 3 – Constructors and Auto-generated IDs
+
+In this part, we:
+
+- Added static ID counters for `Student` and `Course`.
+- Implemented constructors:
+  - `Student(String name)` – automatically assigns a unique `studentId`.
+  - `Course(String courseName)` – automatically assigns a unique `courseId` starting from 101.
+- Updated `Main.java` to create multiple `Student` and `Course` objects and print their details to verify auto-ID generation.
+
 ## Folder Structure
 
 Attendance/
@@ -26,6 +36,7 @@ Attendance/
 javac src/com/school/Main.java
 
 ## How to Run
+javac src/com/school/*.java
 java -cp src com.school.Main
 
 ## Expected output:
