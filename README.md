@@ -21,15 +21,27 @@ In this part, we:
   - `Course(String courseName)` – automatically assigns a unique `courseId` starting from 101.
 - Updated `Main.java` to create multiple `Student` and `Course` objects and print their details to verify auto-ID generation.
 
+## Part 4 – Encapsulation and Attendance Recording
+
+In this part, we:
+
+- Ensured `Student` and `Course` fields are private and added getters.
+- Introduced an `AttendanceRecord` class to link students and courses with an attendance status.
+- Added validation for attendance status:
+  - Accepts `"Present"` or `"Absent"` (case-insensitive).
+  - Any other value is marked as `"Invalid"` and prints a warning.
+- Used `ArrayList<AttendanceRecord>` in `Main` to store and display multiple attendance records.
+
 ## Folder Structure
 
 Attendance/
 ├─ src/
-│  └─ com/
-│     └─ school/
-│        ├─ Main.java
-│        ├─ Student.java
-│        └─ Course.java
+│ └─ com/
+│ └─ school/
+│ ├─ Main.java
+│ ├─ Student.java
+│ ├─ Course.java
+│ └─ AttendanceRecord.java
 ├─ README.md
 
 ## How to Compile
