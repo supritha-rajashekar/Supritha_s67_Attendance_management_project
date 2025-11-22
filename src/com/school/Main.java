@@ -78,5 +78,26 @@ public class Main {
         storageService.saveToFile("Attendance_log.txt", attendanceLog);
 
         System.out.println("\nData saved to files (students.txt, courses.txt, Attendance_log.txt).");
+
+                // ===== Part 7: School Directory using runtime polymorphism =====
+        List<Person> schoolDirectory = new ArrayList<>();
+
+        // Add Students
+        schoolDirectory.addAll(Arrays.asList(students));
+
+        // Add Teachers
+        schoolDirectory.add(teacher1);
+        schoolDirectory.add(teacher2);
+
+        // Add Staff
+        schoolDirectory.add(staff1);
+        schoolDirectory.add(staff2);
+
+        System.out.println("\n=== School Directory ===");
+        for (Person person : schoolDirectory) {
+            // Runtime polymorphism: which getDescription() runs depends on actual object type
+            System.out.println(person.getDescription());
+        }
+
     }
 }

@@ -64,6 +64,19 @@ In this part, we:
   - Save courses to `courses.txt`
   - Save attendance records to `Attendance_log.txt`
 
+  ## Part 7 – Polymorphism and AttendanceRecord Refinement
+
+In this part, we:
+
+- Demonstrated runtime polymorphism using the `Person` hierarchy:
+  - Created a `List<Person>` called the School Directory.
+  - Added `Student`, `Teacher`, and `Staff` objects to it.
+  - Printed each entry using `person.getDescription()`, which resolves at runtime based on the actual object type.
+- Refined the `AttendanceRecord` class:
+  - Improved the `displayRecord()` output to clearly show the student ID, course ID, and status.
+  - Kept validation for the status (`Present` / `Absent`), marking anything else as `Invalid` with a warning.
+- Kept file saving (from Part 6) for students, courses, and attendance.
+
 ## Folder Structure
 
 Attendance/
