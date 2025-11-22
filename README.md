@@ -32,6 +32,21 @@ In this part, we:
   - Any other value is marked as `"Invalid"` and prints a warning.
 - Used `ArrayList<AttendanceRecord>` in `Main` to store and display multiple attendance records.
 
+## Part 5 – Inheritance Hierarchy (Person, Student, Teacher, Staff)
+
+In this part, we:
+
+- Introduced a `Person` base class with a `name` field and a `getDescription()` method.
+- Made `Student`, `Teacher`, and `Staff` extend `Person`.
+- Added auto-generated IDs:
+  - `Student` → `studentId`
+  - `Teacher` → `teacherId`
+  - `Staff` → `staffId`
+- Demonstrated inheritance and polymorphism in `Main` by:
+  - Creating `Student`, `Teacher`, and `Staff` objects.
+  - Storing them in a `Person[]` array and printing them using overridden `toString()` / `getDescription()`.
+- Continued to use `Student` and `Course` IDs in the attendance system.
+
 ## Folder Structure
 
 Attendance/
@@ -39,7 +54,10 @@ Attendance/
 │ └─ com/
 │ └─ school/
 │ ├─ Main.java
+│ ├─ Person.java
 │ ├─ Student.java
+│ ├─ Teacher.java
+│ ├─ Staff.java
 │ ├─ Course.java
 │ └─ AttendanceRecord.java
 ├─ README.md
