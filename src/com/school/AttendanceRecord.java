@@ -31,10 +31,12 @@ public class AttendanceRecord implements Storable {
         return status;
     }
 
-    public void displayRecord() {
-        System.out.println("AttendanceRecord{studentId=" + studentId +
-                ", courseId=" + courseId + ", status='" + status + "'}");
+        public void displayRecord() {
+        System.out.println("Student ID " + studentId
+                + " - Course ID " + courseId
+                + " : " + status);
     }
+
 
     @Override
     public String toStorageString() {
